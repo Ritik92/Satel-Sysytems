@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Calculator</title>
+</head>
+<body>
+
+  <!-- Our HTML with two input fields, a button, and an empty paragraph -->
+  <label for="num1">Number 1:</label>
+  <input type="number" id="num1" placeholder="Enter a number">
+
+  <label for="num2">Number 2:</label>
+  <input type="number" id="num2" placeholder="Enter another number">
+
+  <button id="calculateButton">Calculate Sum</button>
+  <p id="sumResult"></p>
+
+  <!-- Our JavaScript to perform the calculation -->
+  <script>
+    // Get input fields, button, and result paragraph by their IDs
+    const num1Input = document.getElementById('num1');
+    const num2Input = document.getElementById('num2');
+    const calculateButton = document.getElementById('calculateButton');
+    const sumResultParagraph = document.getElementById('sumResult');
+
+    // Add a click event listener to the button
+    calculateButton.addEventListener('click', function() {
+      // Get the values from input fields and calculate the sum
+      const num1 = parseFloat(num1Input.value) || 0; // Convert to number or default to 0
+      const num2 = parseFloat(num2Input.value) || 0; // Convert to number or default to 0
+      const sum = num1 + num2;
+
+      // Display the result in the paragraph
+      sumResultParagraph.textContent = `Sum Required is : ${sum}`;
+    });
+  </script>
+
+</body>
+</html>
