@@ -8,8 +8,7 @@ function userMiddleware(req, res, next) {
     const decodedValue = jwt.verify(jwtToken, JWT_SECRET);
 
     if (decodedValue.username) {    
-        req.username = decodedValue.username;
-        req.randomData = "Adsadsadsadssd";
+        
         next();
     } else {
         res.status(403).json({
